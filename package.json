@@ -1,0 +1,27 @@
+{
+  "name": "@thezahedi/api-handler",
+  "version": "1.0.2",
+  "description": "",
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepublish": "npm run build"
+  },
+  "author": {
+    "name": "Saman Zahedi",
+    "email": "isamanzahedi@gmail.com",
+    "url": "https://saman.click"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^8.2.4",
+    "axios": "^0.24.0",
+    "rxjs": "^7.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  }
+}
