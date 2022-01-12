@@ -1,6 +1,6 @@
 {
   "name": "@thezahedi/api-handler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index",
   "types": "dist/index",
@@ -12,6 +12,10 @@
     "name": "Saman Zahedi",
     "email": "isamanzahedi@gmail.com",
     "url": "https://saman.click"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thezahedi/api-handler.git"
   },
   "license": "MIT",
   "dependencies": {
