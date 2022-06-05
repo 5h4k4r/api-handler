@@ -15,6 +15,8 @@ export class ApiHandlerService {
                 headers: headers,
                 auth: headers?.auth,
             };
+            console.time("RawRequest");
+
 
             console.log(`startof: sendRawRequestResponse, title: ${requestId}`);
 
@@ -27,6 +29,9 @@ export class ApiHandlerService {
             }
 
             response = response && response.data ? response.data : null;
+
+
+            console.timeEnd("RawRe")
 
             console.log('----------------------------------------');
             console.log(`sendRawRequestResponse: ${requestId}`, {
