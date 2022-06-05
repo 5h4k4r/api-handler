@@ -6,6 +6,7 @@ import { ServiceException } from './exceptions/service.exception';
 
 @Injectable()
 export class ApiHandlerService {
+    static counter: number = 0;
     public static async sendRawRequest(method: string, address: string, data: any = {}, headers: any = null, requestId: any = null): Promise<any> {
         const http = axios.default;
         let response = null;
@@ -15,7 +16,7 @@ export class ApiHandlerService {
                 headers: headers,
                 auth: headers?.auth,
             };
-            console.time("RawRequest");
+            console.time(`RawRequest: ${++this.counter}`);
 
 
             console.log(`startof: sendRawRequestResponse, title: ${requestId}`);
@@ -31,7 +32,7 @@ export class ApiHandlerService {
             response = response && response.data ? response.data : null;
 
 
-            console.timeEnd("RawRequest")
+            console.timeEnd(`RawRequest: ${this.counter}`)
 
             console.log('----------------------------------------');
             console.log(`sendRawRequestResponse: ${requestId}`, {
