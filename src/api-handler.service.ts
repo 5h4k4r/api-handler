@@ -31,7 +31,7 @@ export class ApiHandlerService {
             response = response && response.data ? response.data : null;
 
 
-            console.timeEnd("RawRe")
+            console.timeEnd("RawRequest")
 
             console.log('----------------------------------------');
             console.log(`sendRawRequestResponse: ${requestId}`, {
