@@ -11,6 +11,9 @@ export class ApiHandlerService {
         const http = axios.default;
         let response = null;
 
+        if (this.counter > 9999999999)
+            this.counter = 0;
+
         try {
             const options = {
                 headers: headers,
