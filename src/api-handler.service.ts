@@ -16,6 +16,8 @@ export class ApiHandlerService {
                 auth: headers?.auth,
             };
 
+            console.log(`startof: sendRawRequestResponse, title: ${requestId}`);
+
             if (method === 'get') {
                 response = !headers ? await http.get(address) : await http.get(address, options);
             } else if (['delete', 'head', 'options'].includes(method)) {
@@ -30,7 +32,7 @@ export class ApiHandlerService {
             console.log(`sendRawRequestResponse: ${requestId}`, {
                 method,
                 address,
-                data,
+                data: JSON.stringify(data),
                 headers,
                 response,
             });
@@ -39,7 +41,7 @@ export class ApiHandlerService {
             console.log(`sendRawRequestException: ${requestId}`, {
                 method,
                 address,
-                data,
+                data: JSON.stringify(data),
                 headers,
                 exception: exception.response ?? exception,
             });
@@ -84,7 +86,7 @@ export class ApiHandlerService {
             console.log(`sendUrlEncodedRequestResponse: ${requestId}`, {
                 method,
                 address,
-                data,
+                data: JSON.stringify(data),
                 headers,
                 response,
             });
@@ -93,7 +95,7 @@ export class ApiHandlerService {
             console.log(`sendUrlEncodedRequestException: ${requestId}`, {
                 method,
                 address,
-                data,
+                data: JSON.stringify(data),
                 headers,
                 exception: exception.response ?? exception,
             });
