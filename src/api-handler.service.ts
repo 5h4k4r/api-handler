@@ -16,7 +16,8 @@ export class ApiHandlerService {
                 headers: headers,
                 auth: headers?.auth,
             };
-            console.time(`RawRequest: ${++this.counter}`);
+            const current = ++this.counter;
+            console.time(`RawRequest: ${current}`);
 
 
             console.log(`startof: sendRawRequestResponse, title: ${requestId}`);
@@ -32,7 +33,7 @@ export class ApiHandlerService {
             response = response && response.data ? response.data : null;
 
 
-            console.timeEnd(`RawRequest: ${this.counter}`)
+            console.timeEnd(`RawRequest: ${current}`)
 
             console.log('----------------------------------------');
             console.log(`sendRawRequestResponse: ${requestId}`, {
